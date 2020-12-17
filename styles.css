@@ -42,8 +42,8 @@ h1, h2, label, button {
 }
 
 .box {
-  width: 35%;
-  padding: 50px;
+  width: 30%;
+  padding: 40px;
   background-color: rgba(225, 225, 225, .9);
 }
 
@@ -51,7 +51,10 @@ h1, h2, label, button {
   background-color: #0fb9b1;
   width: 40%;
   padding: 2%;
-
+  margin: 2%;
+  border-radius: 5px;
+  border: none;
+  font-size: medium;
 }
 
 .cookpot-box {
@@ -64,10 +67,24 @@ h1, h2, label, button {
 .menu-box {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .list {
   margin: 2%;
+  font-size: 1.2em;
+
+}
+
+.title {
+  margin-left: 2%;
+  font-size: 1.5em;
+}
+
+h2 {
+  margin-left: 2%;
+  margin-bottom: 3%;
+  font-size: xx-large;
 }
 
 img {
