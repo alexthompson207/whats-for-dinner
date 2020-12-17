@@ -94,3 +94,7 @@ h2 {
 img {
   width: 150px;
 }
+
+.hidden {
+  display: none;
+}
