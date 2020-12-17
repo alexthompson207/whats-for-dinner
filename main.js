@@ -52,6 +52,11 @@ var cookButton = document.querySelector('.cook-button');
 //EVENT LISTENERS
 //cookButton.addEventListener('click', );
 
+function changeDisplay() {
+  document.querySelector('.cookpot-box').classList.add('hidden');
+  document.querySelector('.results').classList.remove('hidden');
+}
+
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
   }
