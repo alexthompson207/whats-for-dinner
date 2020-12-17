@@ -16,8 +16,8 @@ html {
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -49,6 +49,9 @@ h1, h2, label, button {
 
 .cook-button {
   background-color: #0fb9b1;
+  width: 40%;
+  padding: 2%;
+
 }
 
 .cookpot-box {
@@ -61,6 +64,10 @@ h1, h2, label, button {
 .menu-box {
   display: flex;
   flex-direction: column;
+}
+
+.list {
+  margin: 2%;
 }
 
 img {
