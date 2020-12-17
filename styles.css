@@ -25,6 +25,7 @@ main {
   justify-content: space-around;
   height: 50%;
   margin: 50px;
+  padding-top: 2%;
 }
 
 nav {
