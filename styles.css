@@ -35,6 +35,9 @@ nav {
 
 .required {
   color: #ee5253;
+  margin: .5%;
+  position: relative;
+  top: -8px;
 }
 
 h1, h2, label, button {
@@ -49,7 +52,7 @@ h1, h2, label, button {
 
 .cook-button {
   background-color: #0fb9b1;
-  width: 40%;
+  width: 45%;
   padding: 2%;
   margin: 2%;
   border-radius: 5px;
