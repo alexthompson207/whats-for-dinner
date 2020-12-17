@@ -48,13 +48,25 @@ var mainDishes = [
 
 //DOM VARIABLES
 var cookButton = document.querySelector('.cook-button');
-
 //EVENT LISTENERS
-//cookButton.addEventListener('click', );
+cookButton.addEventListener('click', displayRandomDish);
 
 function changeDisplay() {
   document.querySelector('.cookpot-box').classList.add('hidden');
   document.querySelector('.results').classList.remove('hidden');
+}
+
+function displayRandomDish() {
+  if(document.getElementById('side').checked === true) {
+    document.querySelector('.display-result').innerText = `${sides[getRandomIndex(sides)]}!`;
+    changeDisplay();
+  } else if(document.getElementById('main-dish').checked === true) {
+    document.querySelector('.display-result').innerText = `${mainDishes[getRandomIndex(mainDishes)]}!`;
+    changeDisplay();
+  } else if(document.getElementById('dessert').checked === true) {
+      document.querySelector('.display-result').innerText = `${desserts[getRandomIndex(desserts)]}!`;
+      changeDisplay();
+    }    
 }
 
 function getRandomIndex(array) {
