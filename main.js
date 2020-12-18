@@ -48,6 +48,7 @@ var mainDishes = [
 
 //DOM VARIABLES
 var cookButton = document.querySelector('.cook-button');
+var displayDish = document.querySelector('.display-result');
 //EVENT LISTENERS
 cookButton.addEventListener('click', displayRandomDish);
 
@@ -58,15 +59,18 @@ function changeDisplay() {
 
 function displayRandomDish() {
   if(document.getElementById('side').checked === true) {
-    document.querySelector('.display-result').innerText = `${sides[getRandomIndex(sides)]}!`;
+    displayDish.innerText = `${sides[getRandomIndex(sides)]}!`;
     changeDisplay();
   } else if(document.getElementById('main-dish').checked === true) {
-    document.querySelector('.display-result').innerText = `${mainDishes[getRandomIndex(mainDishes)]}!`;
+    displayDish.innerText = `${mainDishes[getRandomIndex(mainDishes)]}!`;
     changeDisplay();
   } else if(document.getElementById('dessert').checked === true) {
-      document.querySelector('.display-result').innerText = `${desserts[getRandomIndex(desserts)]}!`;
+      displayDish.innerText = `${desserts[getRandomIndex(desserts)]}!`;
       changeDisplay();
-    }    
+  } else if(document.getElementById('entire-meal').checked === true) {
+      displayDish.innerText = `${mainDishes[getRandomIndex(mainDishes)]} with a side of ${sides[getRandomIndex(sides)]} and ${desserts[getRandomIndex(desserts)]} for dessert!`;
+      changeDisplay();
+  }
 }
 
 function getRandomIndex(array) {
