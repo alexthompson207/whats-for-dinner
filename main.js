@@ -49,8 +49,12 @@ var mainDishes = [
 //DOM VARIABLES
 var cookButton = document.querySelector('.cook-button');
 var displayDish = document.querySelector('.display-result');
+var addRecipeBtn = document.querySelector('.add-recipe');
+var addNewRecipeBtn = document.querySelector('.add-new');
 //EVENT LISTENERS
 cookButton.addEventListener('click', displayRandomDish);
+addRecipeBtn.addEventListener('click', displayForm);
+addNewRecipeBtn.addEventListener('click', showNewRecipe);
 
 function changeDisplay() {
   document.querySelector('.cookpot-box').classList.add('hidden');
@@ -71,6 +75,14 @@ function displayRandomDish() {
       displayDish.innerText = `${mainDishes[getRandomIndex(mainDishes)]} with a side of ${sides[getRandomIndex(sides)]} and ${desserts[getRandomIndex(desserts)]} for dessert!`;
       changeDisplay();
   }
+}
+
+function displayForm() {
+  document.querySelector('.input-recipe').classList.remove('hidden');
+}
+
+function showNewRecipe() {
+  event.preventDefault();
 }
 
 function getRandomIndex(array) {
