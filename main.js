@@ -53,10 +53,17 @@ var addRecipeBtn = document.querySelector('.add-recipe');
 var addNewRecipeBtn = document.querySelector('.add-new');
 var newRecipeType = document.getElementById('recipe-type');
 var newRecipeName = document.getElementById('recipe-name');
+var clearBtn = document.querySelector('.clear-button');
+var radioBtns = document.getElementsByTagName('input');
+
+
 //EVENT LISTENERS
 cookButton.addEventListener('click', displayRandomDish);
 addRecipeBtn.addEventListener('click', displayForm);
 addNewRecipeBtn.addEventListener('click', showNewRecipe);
+clearBtn.addEventListener('click', showCookpot);
+
+
 
 function changeDisplay() {
   document.querySelector('.cookpot-box').classList.add('hidden');
@@ -103,6 +110,23 @@ function addNewRecipe() {
   } else {
     displayError();
   }
+}
+
+function showCookpot() {
+  document.querySelector('.cookpot-box').classList.remove('hidden');
+  document.querySelector('.results').classList.add('hidden');
+  clearRadioBtns();
+  clearInputs();
+}
+
+function clearRadioBtns() {
+  for(var i = 0; i < radioBtns.length; i++)
+    radioBtns[i].checked = false;
+}
+
+function clearInputs() {
+  newRecipeType.value = "";
+  newRecipeName.value = "";
 }
 
 function displayError() {
