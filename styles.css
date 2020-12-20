@@ -59,6 +59,7 @@ h1, h2, label, button {
   border-radius: 5px;
   border: none;
   font-size: medium;
+  cursor: pointer;
 }
 
 .cookpot-box {
@@ -115,6 +116,17 @@ img {
   width: 150px;
 }
 
+.input-recipe {
+  position: absolute;
+  margin-bottom: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgba(225, 225, 225, .9);
+  padding: 1.4%;
+  padding-bottom: 1.3%;
+}
+
 .add-recipe {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -125,6 +137,35 @@ img {
   border: none;
   font-size: .99em;
 }
+
+.type-form {
+  margin-right: .5%;
+  align-self: center;
+  font-size: 1.2em;
+}
+
+.name-form {
+  margin-right: .5%;
+  align-self: center;
+  font-size: 1.2em;
+
+}
+
+#recipe-name, #recipe-type {
+  margin-right: 2%;
+  height: 35px;
+}
+
+.add-new {
+  border-radius: 5px;
+  background-color: #0fb9b1;
+  width: 5%;
+  padding-left: .5%;
+  padding-right: .5%;
+  font-size: 92%;
+  border: none;
+}
+
 
 .hidden {
   display: none;
