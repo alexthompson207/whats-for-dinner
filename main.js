@@ -51,6 +51,8 @@ var cookButton = document.querySelector('.cook-button');
 var displayDish = document.querySelector('.display-result');
 var addRecipeBtn = document.querySelector('.add-recipe');
 var addNewRecipeBtn = document.querySelector('.add-new');
+var newRecipeType = document.getElementById('recipe-type');
+var newRecipeName = document.getElementById('recipe-name');
 //EVENT LISTENERS
 cookButton.addEventListener('click', displayRandomDish);
 addRecipeBtn.addEventListener('click', displayForm);
@@ -83,6 +85,28 @@ function displayForm() {
 
 function showNewRecipe() {
   event.preventDefault();
+  addNewRecipe();
+  changeDisplay();
+}
+
+function addNewRecipe() {
+
+  if(newRecipeType.value.toLowerCase() === "side") {
+    sides.push(newRecipeName.value);
+    displayDish.innerText = `${newRecipeName.value}!`;
+  } else if (newRecipeType.value.toLowerCase() === "main dish") {
+    mainDishes.push(newRecipeName.value);
+    displayDish.innerText = `${newRecipeName.value}!`;
+  } else if (newRecipeType.value.toLowerCase() === "dessert") {
+    desserts.push(newRecipeName.value);
+    displayDish.innerText = `${newRecipeName.value}!`;
+  } else {
+    displayError();
+  }
+}
+
+function displayError() {
+  displayDish.innerText = `${newRecipeType.value} is not a valid recipe type!`;
 }
 
 function getRandomIndex(array) {
