@@ -56,11 +56,14 @@ var newRecipeName = document.getElementById('recipe-name');
 var clearBtn = document.querySelector('.clear-button');
 var radioBtns = document.getElementsByTagName('input');
 
+
 //EVENT LISTENERS
 cookButton.addEventListener('click', displayRandomDish);
 addRecipeBtn.addEventListener('click', displayForm);
 addNewRecipeBtn.addEventListener('click', showNewRecipe);
 clearBtn.addEventListener('click', showCookpot);
+
+
 
 function changeDisplay() {
   document.querySelector('.cookpot-box').classList.add('hidden');
