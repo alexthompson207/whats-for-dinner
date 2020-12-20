@@ -49,8 +49,18 @@ var mainDishes = [
 //DOM VARIABLES
 var cookButton = document.querySelector('.cook-button');
 var displayDish = document.querySelector('.display-result');
+var addRecipeBtn = document.querySelector('.add-recipe');
+var addNewRecipeBtn = document.querySelector('.add-new');
+var newRecipeType = document.getElementById('recipe-type');
+var newRecipeName = document.getElementById('recipe-name');
+var clearBtn = document.querySelector('.clear-button');
+var radioBtns = document.getElementsByTagName('input');
+
 //EVENT LISTENERS
 cookButton.addEventListener('click', displayRandomDish);
+addRecipeBtn.addEventListener('click', displayForm);
+addNewRecipeBtn.addEventListener('click', showNewRecipe);
+clearBtn.addEventListener('click', showCookpot);
 
 function changeDisplay() {
   document.querySelector('.cookpot-box').classList.add('hidden');
@@ -71,6 +81,53 @@ function displayRandomDish() {
       displayDish.innerText = `${mainDishes[getRandomIndex(mainDishes)]} with a side of ${sides[getRandomIndex(sides)]} and ${desserts[getRandomIndex(desserts)]} for dessert!`;
       changeDisplay();
   }
+}
+
+function displayForm() {
+  document.querySelector('.input-recipe').classList.remove('hidden');
+}
+
+function showNewRecipe() {
+  event.preventDefault();
+  addNewRecipe();
+  changeDisplay();
+}
+
+function addNewRecipe() {
+
+  if(newRecipeType.value.toLowerCase() === "side") {
+    sides.push(newRecipeName.value);
+    displayDish.innerText = `${newRecipeName.value}!`;
+  } else if (newRecipeType.value.toLowerCase() === "main dish") {
+    mainDishes.push(newRecipeName.value);
+    displayDish.innerText = `${newRecipeName.value}!`;
+  } else if (newRecipeType.value.toLowerCase() === "dessert") {
+    desserts.push(newRecipeName.value);
+    displayDish.innerText = `${newRecipeName.value}!`;
+  } else {
+    displayError();
+  }
+}
+
+function showCookpot() {
+  document.querySelector('.cookpot-box').classList.remove('hidden');
+  document.querySelector('.results').classList.add('hidden');
+  clearRadioBtns();
+  clearInputs();
+}
+
+function clearRadioBtns() {
+  for(var i = 0; i < radioBtns.length; i++)
+    radioBtns[i].checked = false;
+}
+
+function clearInputs() {
+  newRecipeType.value = "";
+  newRecipeName.value = "";
+}
+
+function displayError() {
+  displayDish.innerText = `${newRecipeType.value} is not a valid recipe type!`;
 }
 
 function getRandomIndex(array) {
